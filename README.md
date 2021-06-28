@@ -44,6 +44,7 @@
  슬라이딩 윈도우를 수행할 때는 pandas 패키지의 shift를 사용해 간단하고 효율적인 슬라이딩을 진행하였다.   
  그림으로 표현하면 <그림1>과 같으며, 후에 생성되는 데이터의 앞 20개의 데이터는 NULL값이 존재하므로, 삭제해준다.  
    
+   ![image](https://user-images.githubusercontent.com/52438368/123590658-e4444100-d825-11eb-86bb-882aaaa0ac9c.png)  
 <그림1>  
 4. 딥러닝 모델 구조 비교  
  모델의 원활한 비교를 위해 batch size는 20으로 고정하였고, 훈련 데이터는 거주자의 일상 생활 30분을 사용하고, 테스트 데이터로는 과장된 침입자 데이터 3분을 사용한다.  
@@ -52,21 +53,25 @@
  <표1>  
  슬라이딩 윈도우를 함과 동시에 LSTM 입력층의 셀 개수를 확장 시켜주는 것이 더 좋은 성능이 나타남에 따라 증명되었다.  
    
+   ![image](https://user-images.githubusercontent.com/52438368/123590672-e73f3180-d825-11eb-901e-9b6c7f4842cf.png)  
  <그림2> 64-16, sliding 0, epochs 200 모델 임계값 비교  
+ ![image](https://user-images.githubusercontent.com/52438368/123590673-e8705e80-d825-11eb-91ef-601537f95bbe.png)  
  <그림3> 256-64, sliding 5, epochs 100 모델 임계값 비교  
+ ![image](https://user-images.githubusercontent.com/52438368/123590676-ea3a2200-d825-11eb-8cbd-e2ce20f29793.png)  
  <그림4> 640-128, sliding 10, epochs 100 모델 임계값 비교  
    
  <그림2>는 침입자 행동의 초기 부분만 잘 감지할 뿐 그 이후의 결과는 잘 감지하지 못하는 결과가 나타난다.  
  <그림3>는 침입자 데이터가 잘 감지되지만 <그림4>과 비교했을 때 <그림3>이 훨씬 높은 임계값 차이로 침입자 를 더 정확하게 판단하는 모델이라고 볼 수 있다  
-   
+   ![image](https://user-images.githubusercontent.com/52438368/123590682-eb6b4f00-d825-11eb-810a-dac4b03dce5e.png)  
 <그림5> 640-128, dropout 0.3, sliding 10, epochs 500 모델의 epochs당 loss 그래프  
   
-LSTM dropout sliding epochs loss 임계값  
+LSTM dropout sliding epochs loss 임계값순으로  
 64-16 0.3 x 200 0.72 0.16  
 256-64 0.3 5 100 0.729 0.14  
 640-128 0.3 10 100 0.73 0.12  
 640-128 0.3 10 500 0.582 0.125  
-  
+
+  ![image](https://user-images.githubusercontent.com/52438368/123590871-3f763380-d826-11eb-99f1-ac4e5c9eb698.png)  
 <그림6> 640-128, dropout 0.3, sliding 10, epochs 500 모델의 loss 분포 그래프  
   
  <그림4>와 <그림5>을 비교해 보았을때, <표1>의 마지막 모델은 과적합(overfitting)이 일어났다는 것을 확인할 수 있다.   
