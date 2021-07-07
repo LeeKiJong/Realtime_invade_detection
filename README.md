@@ -93,6 +93,7 @@
  또한 분석한 결과를 토대로 실시간 침입자 감지 시 정확한 판단을 할 수 있도록 연구하였다.   
  향후 연구로는 모델 구조의 다양화를 통해 최적의 모델을 훈련하여 더 정확하고 신속한 판단을 할 수 있도록 연구할 계획이다.   
    
+   
  참고문헌  
  [1] 이주연, 이기용 "확장된 LSTM 오토인코더 기반 이상시퀀스 탐지 기법" 한국전자거래학회지 v.26 no.1 , 2021년, pp.127 - 140  
  [2] JAGADEESH23, Multivariate Multi-step Time SeriesForecasting using Stacked LSTM sequence to sequenceAutoencoder in Tensorflow 2.0 / Keras, AnalyticsVidhya, 2020.  
