@@ -7,7 +7,7 @@
  LSTM AutoEncoer 기반 이상시퀀스 탐지 기법은 참고 문헌[1]을 참고하여 거주자의일상적인 이동 패턴을 이용하여 학습하고 학습한 모델을  
  이용하여 훈련되지 않는 이동패턴이 감지될 경우 침입자로 판단하고 거주자에게 알림을 보내게 된다.  
  
-  
+ 
 <h2>2. 하드웨어 설계</h2>  
  라즈베리파이4(Raspberry Pi 4 Model B) 4GB, 열감지 센서(Adafruit AMG8833 IR Thermal Camera Breakout[ada-3538]), 라즈베리파이4 5V 알래스카 듀얼팬 키트  
  (SZH-RPI02), 라즈베리파이 전원 어댑터와 male-female선으로 구성된다.  
